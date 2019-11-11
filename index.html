@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Frog Ui Card</title>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+<body>
+    <style>
+        * {
+            /* select all element*/
+            padding: 0;
+            margin: 0;
+            font-family:sans-serif;
+            list-style: none;
+            text-decoration: none;
+        }
+        body {
+            background: #9b59b6;
+        }
+        .card {
+            width: 400px;
+            position: absolute; 
+            top: 50%;
+            left: 50%;
+                /* set always center */
+            background: #f1f1f1;
+            transform: translate(-50%,-50%);
+            overflow: hidden;
+            box-shadow: 0px 0px 20px #000000b3;
+        }
+        .card-header {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        .card-header img {
+            height: 100%;
+        }
+        .card-header .cover{
+            /* a some kind of blur background*/
+            background: #9b59b6b3;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .card-header .menu{
+            position: absolute; /* set position of menu top right 20px*/
+            top: 20px;
+            right:20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            opacity: 0.7;
+            cursor: pointer; /* draw a cursor icon when you point*/
+        }
+        .card-header span {
+            font-size: 32px; /*set icon size*/
+        }
+        .card-header ul {
+            /* set spacing between icon */
+            background: black;
+            padding: 6px 0;
+            margin: 0 14px;
+        }
+        .card-header li {
+            float: left;
+            width: 30px;
+            text-align: center;
+            display: none;
+        }
+        .card-header .menu:hover > ul { /* when we hover menu manipulate li*/
+            display: block;
+        }
+        .card-header .name{
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            opacity:0.7;
+        }
+        .card-header .last{
+            font-size: 36px;
+            display: block;
+        }
+        .card-header .first{
+            font-size: 48px;
+            display: block;
+        }
+
+        .container {
+            padding: 20px;
+            overflow: hidden;
+         
+        }
+        .left-section{
+            width: 200px;
+            overflow: hidden; /* overflow make you optimize float by two side 
+                                    ปกติถ้าทำ float ทั้งซ้าย และขวา parent element จะยุบ ต้องแก้ด้วย overflow */
+            float: left;
+        }
+        .left-section h3{
+            color: #9b59b6;
+        }
+        .left-section p {
+            margin: 30px 0;
+        }
+        .left-section .followbtn{
+            width: 100%;
+            background:#9b59b6;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+            display: block; /* display block เพื่อให้ในแถว
+                                วางได้แค่ element นี้อย่างเดียว และขยายเต็มจอ 
+                                ซึ่ง display inline ตัว element จะมีขนาดเท่าจริง และซ้อนติดๆกัน */
+            padding: 8px 0;
+            transition: 0.2s all;
+        }
+        .left-section .followbtn:hover{
+            background: #8e44ad;
+        }
+        .right-section {
+            overflow: hidden;
+            float: right;
+            display: block;
+        }
+        .item {
+            margin: 6px 0;
+            font-size: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .word {
+            font-size: 16px;
+        }
+        
+    </style>
+    <div class="card"> <!-- outter container -->
+        <div class="card-header"> <!-- head container บริเวณรูปหน้าปก -->
+            <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/103CF/production/_106211566_scheele2hr.jpg" alt="Hinata">
+            <div class="cover"></div>
+            <div class="menu"> <!-- right top side menu -->
+                <ul>
+                    <li class="ion-social-facebook"></li>
+                    <li class="ion-social-twitter"></li>
+                    <li class="ion-social-instagram"></li>
+                </ul>
+                <span class="ion-android-more-vertical"></span>
+                <!-- icon lib will set actual size for us -->
+                
+            </div>
+            <div class="name"> <!-- absolute position of name --> 
+                <span class="last">Hyuga</span>
+                <span class="first">Frog</span>
+            </div>
+
+        </div>
+        <div class="container"> <!-- content container บริเวณเนื้อหา -->
+                <div class="left-section"> <!-- ด้านซ้าย ทำทีละข้าง แล้วค่อยจัด layout --> 
+                    <h3>About</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ornare.</p>
+                    <a class="followbtn" href="#">Follow me</a>
+                </div>
+                <div class="right-section"> <!-- ด้านขวา --> 
+                    <div class="item">
+                        <span class="num">96</span>
+                        <span class="word">Video</span>
+                    </div>
+                    <div class="item">
+                            <span class="num">2.3K</span>
+                            <span class="word">Subscribers</span>
+                        </div>
+                    <div class="item">
+                            <span class="num">130</span>
+                            <span class="word">Views</span>
+                        </div>
+                </div>
+        </div>
+
+    </div>
+</body>
+</html>
